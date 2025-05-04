@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Solanki Building Contracting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+    }
+    header img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+    .content-container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      z-index: 10;
+    }
+    .btn {
+      background: linear-gradient(90deg, rgba(255,58,130,0.8), rgba(82,51,255,0.8));
+      color: white;
+      padding: 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-align: center;
+      display: inline-block;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 20px rgba(255, 58, 130, 0.3);
+    }
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      z-index: 10;
+    }
+    .gradient-background, .particles-container, .grid-overlay, .glow {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .gradient-sphere {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+    .sphere-1 {
+      width: 40vw; height: 40vw;
+      background: linear-gradient(40deg, rgba(255, 0, 128, 0.8), rgba(255, 102, 0, 0.4));
+      top: -10%; left: -10%;
+      animation: float-1 15s ease-in-out infinite alternate;
+    }
+    .sphere-2 {
+      width: 45vw; height: 45vw;
+      background: linear-gradient(240deg, rgba(72, 0, 255, 0.8), rgba(0, 183, 255, 0.4));
+      bottom: -20%; right: -10%;
+      animation: float-2 18s ease-in-out infinite alternate;
+    }
+    .sphere-3 {
+      width: 30vw; height: 30vw;
+      background: linear-gradient(120deg, rgba(133, 89, 255, 0.5), rgba(98, 216, 249, 0.3));
+      top: 60%; left: 20%;
+      animation: float-3 20s ease-in-out infinite alternate;
+    }
+    @keyframes float-1 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(10%, 10%) scale(1.1); }
+    }
+    @keyframes float-2 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(-10%, -5%) scale(1.15); }
+    }
+    @keyframes float-3 {
+      0% { transform: translate(0,0) scale(1); opacity: 0.3; }
+      100% { transform: translate(-5%, 10%) scale(1.05); opacity: 0.6; }
+    }
+    .grid-overlay {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 0.75rem;
+      }
+      .content-container {
+        padding: 1.5rem 1rem;
+      }
+      .buttons {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        max-width: 100%;
+      }
+      .btn {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+      }
+      footer {
+        font-size: 0.75rem;
+        padding: 0 1rem;
+      }
+    }
+    @media (min-width: 769px) {
+      header img {
+        max-width: 400px;
+      }
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gradient-background">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+  <div class="particles-container" id="particles-container"></div>
+
+  <header>
+    <div style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 12px; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 100%;">
+      <img alt="Solanki Logo" src="logo.png" />
+    </div>
+  </header>
+
+  <div class="content-container">
+    <div class="buttons">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdst4spZqUCTbWALUFKe7w_VVikPBca3akqeiirzOLTKhPH6w/viewform?usp=header" target="_blank">Quotation</a>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSet8xDqhuyJdzlXBDMu_r9enNUWaPaLoPR8Sb0vpUhEOSkhIw/viewform?usp=header" target="_blank">Employee Contract</a>
+      <a class="btn" href="https://www.sejda.com/sign-pdf" target="_blank">Sign PDF</a>
+      <a class="btn" href="https://www.sejda.com/merge-pdf" target="_blank">Combine PDF</a>
+      <a class="btn" href="https://www.sejda.com/pdf-editor" target="_blank">Edit PDF</a>
+      <a class="btn" target="_blank">Coming soon</a>
+    </div>
+  </div>
+
+  <footer>
+    Designed and developed by Areen Solanki for Solanki Building Contracting
+  </footer>
+
+  <script>
+    const particlesContainer = document.getElementById('particles-container');
+    const particleCount = 80;
+
+    for (let i = 0; i < particleCount; i++) {
+      createParticle();
+    }
+
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      const size = Math.random() * 3 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      resetParticle(particle);
+      particlesContainer.appendChild(particle);
+      animateParticle(particle);
+    }
+
+    function resetParticle(particle) {
+      const posX = Math.random() * 100;
+      const posY = Math.random() * 100;
+      particle.style.position = 'absolute';
+      particle.style.left = `${posX}%`;
+      particle.style.top = `${posY}%`;
+      particle.style.opacity = '0';
+      particle.style.background = 'white';
+      particle.style.borderRadius = '50%';
+    }
+
+    function animateParticle(particle) {
+      const pos = { x: parseFloat(particle.style.left), y: parseFloat(particle.style.top) };
+      const duration = Math.random() * 10 + 10;
+      const delay = Math.random() * 5;
+
+      setTimeout(() => {
+        particle.style.transition = `all ${duration}s linear`;
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        const moveX = pos.x + (Math.random() * 20 - 10);
+        const moveY = pos.y - Math.random() * 30;
+        particle.style.left = `${moveX}%`;
+        particle.style.top = `${moveY}%`;
+
+        setTimeout(() => {
+          animateParticle(particle);
+        }, duration * 1000);
+      }, delay * 1000);
+    }
+  </script>
+</body>
+</html>
